@@ -3,7 +3,7 @@
   (:require [clojure.test :refer [deftest is run-tests]]
             [clojure.set :as set]
             [clojure.string :as str]
-            [cheshire.core :as json]))
+            [json.compat :as json]))
 
 (def ^:private actor-dir (.getCanonicalFile (java.io.File. (or (System/getProperty "user.dir") "."))))
 (def ^:private lexdir (java.io.File. actor-dir "wire/contracts/lexicons"))
