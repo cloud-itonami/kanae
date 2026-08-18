@@ -100,8 +100,8 @@
      "Idempotently merge projected datoms into the yoro seed snapshot JSON. Removes any
      prior entities this projector owns before adding (re-runs don't duplicate)."
      [seed-path datoms]
-     (let [parse @(requiring-resolve 'cheshire.core/parse-string)
-           gen   @(requiring-resolve 'cheshire.core/generate-string)
+     (let [parse @(requiring-resolve 'json.compat/parse-string)
+           gen   @(requiring-resolve 'json.compat/generate-string)
            seed (parse (slurp seed-path))
            owned (set (map #(get % "e") datoms))
            before (count seed)
