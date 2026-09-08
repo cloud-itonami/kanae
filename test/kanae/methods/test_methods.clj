@@ -3,7 +3,7 @@
   deterministic fiscal fixture.")
 
 (require '[clojure.test :refer [deftest is testing run-tests]])
-(require '[clojure.string :as str])
+(require '[kotoba.lang.text :as str])
 (require '[kanae.methods.assemble-flows :as af])
 (require '[kanae.methods.project-yoro   :as py])
 

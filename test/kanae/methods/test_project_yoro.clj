@@ -8,7 +8,7 @@
   datoms emitted once per known endpoint."
   (:require [kanae.methods.project-yoro :as py]
             [kanae.methods.assemble-flows :as af]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.test :refer [deftest is run-tests]]))
 
 (def LEDGER

@@ -11,7 +11,7 @@
     G10 aggregate endpoints — endpoints carry no publiclyNamedBasis (no named party).
 
   Maps use string keys (mirroring the Python dicts). Pure — no I/O."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (def FLOW-CLASSES
   #{"appropriation" "outlay" "subaward" "procurement-award"
@@ -35,7 +35,7 @@
 (defn assert-non-adjudicating
   "G4: refuse any verdict token anywhere in the edge."
   [edge]
-  (let [blob (str/lower-case
+  (let [blob (str/lower
               (str/join " " [(str (get edge "flowClass" ""))
                              (str (get-in edge ["fromEndpoint" "label"] ""))
                              (str (get-in edge ["toEndpoint" "label"] ""))]))]

@@ -21,7 +21,7 @@
 
   Pure fns; deterministic; string-keyed post records (house style). Stdlib only —
   the growth (live signing/broadcast) happens actor-side on the mesh, not here."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (def DISCLAIMER
   (str "【観測ミラー / fiscal-flow map — NOT the government, NOT an auditor, 非断定】 "
