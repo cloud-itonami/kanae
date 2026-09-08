@@ -2,7 +2,7 @@
   "kanae — constitutional-gate conformance tests. Substrate-native Clojure (ADR-2606160842); 1:1 port of pruned test_charter_gates.py."
   (:require [clojure.test :refer [deftest is run-tests]]
             [clojure.set :as set]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [json.compat :as json]))
 
 (def ^:private actor-dir (.getCanonicalFile (java.io.File. (or (System/getProperty "user.dir") "."))))
@@ -58,7 +58,7 @@
 
 (deftest test-g1-no-verdict-field
   (doseq [name ["fundFlowEdge" "flowNarrative" "visualizationManifest"]]
-    (let [keys (set (map str/lower-case (property-keys (lex name))))]
+    (let [keys (set (map str/lower (property-keys (lex name))))]
       (doseq [bad ["verdict" "truthrating" "score" "ranking"]]
         (is (not (contains? keys bad))
             (str "G1: " name " must not carry a '" bad "' field (kanae renders no verdict)"))))))

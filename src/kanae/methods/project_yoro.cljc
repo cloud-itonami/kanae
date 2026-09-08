@@ -6,7 +6,7 @@
 
   Aggregate gov endpoints only (G10). Maps use string keys (mirroring the Python
   dicts / assemble output). JSON seed merge lives at the #?(:clj) edge."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 ;; Endpoint label → (yoro mirror-actor handle, stage tier). Aggregate gov nodes only (G10).
 (def ^:private label-did
@@ -27,7 +27,7 @@
 
 (defn- slug-did [label]
   (or (some (fn [[pat handle _]] (when (re-find pat label) (str actor-prefix handle))) label-did)
-      (let [base (-> (str/lower-case label)
+      (let [base (-> (str/lower label)
                      (str/replace #"[^a-z0-9]+" "-")
                      (str/replace #"^-+|-+$" ""))
             base (subs base 0 (min 32 (count base)))
