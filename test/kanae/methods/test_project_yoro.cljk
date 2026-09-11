@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; Clojure test for methods/project_yoro.cljc — kanae 鼎 yoro projection.
 ;; Feeds the assemble-flows output (same pipeline as python test_pipeline.py) and
 ;; checks the projected :yoro.fiscal/* + :yoro.profile/* datoms.

@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; Clojure test for methods/assemble_flows.cljc — kanae 鼎 fundFlowEdge assembler.
 ;; (The python test_pipeline.py exercises the same assemble/validate over a danjo
 ;; ledger; this tests the kanae functions directly with a synthetic ledger so the

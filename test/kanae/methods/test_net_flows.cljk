@@ -1,6 +1,6 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; kanae 鼎 — tests for the per-endpoint fiscal net-flow aggregate.
-;; Run as part of the standalone `bb test` suite.
+;; Run as part of the standalone `kbb -M:test` suite.
 (ns kanae.methods.test-net-flows
   "Tests for net-flows — the per-endpoint fiscal flow balance (inflow − outflow) over the assembled
   fundFlowEdges. A non-adjudicating aggregate (G4 — a sum of disclosed amounts, no verdict) over
