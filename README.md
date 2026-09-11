@@ -8,5 +8,5 @@ DID, and fixture JSON is isolated under `wire/`. Implementations and tests live
 under `src/kanae` and `test/kanae`; actor-owned history is under `data/identity`
 and `docs/adr`.
 
-Run `bb test` for the comprehensive standalone suite. Go, TinyGo, Rust/Cargo,
+Run `kbb -M:test` for the comprehensive standalone suite. Go, TinyGo, Rust/Cargo,
 wasm binaries, shell runners, and the former JSON-LD manifest are prohibited.
