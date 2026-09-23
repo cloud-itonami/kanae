@@ -2,7 +2,7 @@
   "Standalone tests for flow assembly and Yoro projection using a captured,
   deterministic fiscal fixture.")
 
-(require '[clojure.test :refer [deftest is testing run-tests]])
+(require '[kotoba.test :refer [deftest is testing run-tests]])
 (require '[kotoba.lang.text :as str])
 (require '[kanae.methods.assemble-flows :as af])
 (require '[kanae.methods.project-yoro   :as py])
@@ -349,5 +349,5 @@
 ;; ---------------------------------------------------------------------------
 
 (when (= *file* (System/getProperty "babashka.file"))
-  (let [{:keys [fail error]} (clojure.test/run-tests 'kanae.methods.test-methods)]
+  (let [{:keys [fail error]} (kotoba.test/run-tests 'kanae.methods.test-methods)]
     (System/exit (if (zero? (+ fail error)) 0 1))))

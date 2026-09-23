@@ -9,7 +9,7 @@
   (:require [kanae.methods.project-yoro :as py]
             [kanae.methods.assemble-flows :as af]
             [kotoba.lang.text :as str]
-            [clojure.test :refer [deftest is run-tests]]))
+            [kotoba.test :refer [deftest is run-tests]]))
 
 (def LEDGER
   {"groups"
