@@ -7,7 +7,7 @@
   fiscal-authority endpoints (G10 aggregate-first); verifies the treasury reads as a net SOURCE and
   the recipients as net RECEIVERS, ranked biggest-receiver first."
   (:require [kanae.methods.assemble-flows :as af]
-            [clojure.test :refer [deftest is run-tests]]))
+            [kotoba.test :refer [deftest is run-tests]]))
 
 (def ^:private edges
   [{"fromEndpoint" {"label" "Treasury"}  "toEndpoint" {"label" "MinistryA"} "amount" "100"}
