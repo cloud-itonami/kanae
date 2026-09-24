@@ -1,4 +1,10 @@
-{:paths ["src" "test"] :deps {cheshire/cheshire {:mvn/version "5.13.0"}}
+{:paths ["src" "test"] :deps {
+        ;; kotoba.lang.coll replaced clojure.set here (2026-09-24). An explicit
+        ;; floor: kotoba.lang.coll carries clojure.set's union/intersection/
+        ;; difference/map-invert from 0ffd5f6, and tools.deps takes the NEWEST
+        ;; sha it is shown.
+        io.github.kotoba-lang/coll {:git/sha "0ffd5f6340af50871d4759b06e02ac4fbf9a4bdf"}
+        cheshire/cheshire {:mvn/version "5.13.0"}}
  :tasks {test {:requires ([clojure.test] [kanae.methods.test-assemble-flows]
                           [kanae.methods.test-charter-gates] [kanae.methods.test-methods]
                           [kanae.methods.test-net-flows] [kanae.methods.test-project-yoro]
